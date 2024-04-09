@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const users = [
+            {
+                name: "Nguyễn Văn A",
+                address: "Hà Nội",
+                email: "nva@rikkei.com",
+            },
+            {
+                name: "Trần Văn Bình",
+                address: "Hà Nội",
+                email: "tvbinh@rikkei.com",
+            },
+            {
+                name: "Nguyễn Hồng Anh",
+                address: "Thái Bình",
+                email: "nhanh@gmail.com",
+            },
+            {
+                name: "Lê Văn Nam",
+                address: "Hà Nội",
+                email: "lvnam@gmail.com",
+            },
+        ];
+        function filterByAddressAndEmail(users, city, emailEnd) {
+            // dung find tim phan tu dau tien dung    
+            const firstUser = users.find((user) =>
+                    user.address === city &&
+                    user.email.indexOf(
+                        emailEnd,
+                        user.email.length - emailEnd.length
+                    ) !== -1
+            );
+
+            // filter de loc ra tat ca nhung cai dung dieu kien voi cai dau tien
+            const filteredUsers = users.filter(
+                (user) =>
+                    user.address === firstUser.address &&
+                    user.email.indexOf(
+                        emailEnd,
+                        user.email.length - emailEnd.length
+                    ) !== -1
+            );
+
+            return filteredUsers;
+        }
+
+        const filteredUsers1 = filterByAddressAndEmail(users, "Hà Nội", "@rikkei.com");
+        console.log(filteredUsers1);
+        const filteredUsers2 = filterByAddressAndEmail(users, "Thái Bình", "@gmail.com");
+        console.log(filteredUsers2);
+
+
+
+    </script>
+</body>
+
+</html>

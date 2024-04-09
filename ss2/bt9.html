@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let carts = [
+            {
+                product_name: "Cam",
+                price: 20000,
+                quantity: 5
+            },
+            {
+                product_name: "Táo",
+                price: 30000,
+                quantity: 3
+            },
+            {
+                product_name: "Xoài",
+                price: 40000,
+                quantity: 2
+            },
+        ]
+        function totalPrice1(arr) {
+            return arr.reduce((sum, value, arr) => {
+                return sum + value.price * value.quantity;
+            }, 0)
+        }
+        console.log(totalPrice1(carts));
+        function totalPrice2(arr) {
+            let sum = 0;
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i].price * arr[i].quantity;
+            }
+            return sum;
+        }
+        console.log(totalPrice2(carts));
+    </script>
+</body>
+
+</html>

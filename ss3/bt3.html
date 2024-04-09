@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class student {
+            constructor(id, name) {
+                this.id = id;
+                this.name = name;
+            }
+        }
+
+        let listStudent = [
+            new student(1, "Nguyễn Gia Thiều"),
+            new student(2, "Nguyễn Vải Thiều")
+        ];
+
+        function greeting(student) {
+            console.log(`Xin chào, Sinh viên có ID ${student.id} tên là ${student.name}.`);
+        }
+
+        for (const student of listStudent) {
+            greeting(student);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let Books = [
+            {
+                id: 5,
+                name: "sách hay",
+            },
+            {
+                id: 6,
+                name: "sách gần hay",
+            }
+        ]
+        let searchId = 5;
+
+        let foundBook = Books.find((item) => {
+            return item.id === searchId;
+        });
+
+        if (foundBook) {
+            console.log(foundBook);
+        } else {
+            console.log("Không có đâu mà tìm!!!");
+        }
+    </script>
+</body>
+
+</html>

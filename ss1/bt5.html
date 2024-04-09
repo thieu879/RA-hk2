@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let User = [
+            {
+                userName: "thieunguyen123",
+                passWord: "thieunguyen 879",
+            },
+            {
+                userName: "thieunguyen879",
+                passWord: "thieunguyen879",
+            }
+        ];
+
+        let hasSpace = false;
+
+        User.forEach((item, index) => {
+            if (item.passWord.includes(" ")) {
+                console.log("Vị trí chứa dấu cách:", index);
+                hasSpace = true;
+            }
+        });
+
+        if (!hasSpace) {
+            console.log("Mọi tài khoản hợp lệ.");
+        }
+
+    </script>
+</body>
+
+</html>

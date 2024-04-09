@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function combineObjects(...objs) {
+            let generalObjects = {};
+
+            for (const i of objs) {
+                for (let [key, value] of Object.entries(i)) {
+                    generalObjects[key] = value;
+                }
+            }
+            return generalObjects;
+        }
+
+        const obj1 = { id: 111, name: "Thiều", age: 18 };
+        const obj2 = { name: "vải", age: 25, address: "Nhà" };
+        const obj3 = { id: 222, age: 20, address: "cống" };
+
+        console.log(combineObjects(obj1, obj2, obj3));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let phoneBooks = [];
+        function addContact(name, phoneNumber, email) {
+            let contact = {
+                name: name,
+                phoneNumber: phoneNumber,
+                email: email
+            };
+            phoneBooks.push(contact);
+        }
+        function displayContacts() {
+            if (phoneBooks.length === 0) {
+                console.log("Danh bạ trống.");
+            } else {
+                console.log("Danh bạ:");
+                phoneBooks.forEach(function (contact, index) {
+                    console.log(`Tên: ${contact.name}, Số điện thoại: ${contact.phoneNumber}, Email: ${contact.email}`);
+                });
+            }
+        }
+
+        addContact("Nguyễn Gia Thiều", "123456789", "giathieu@example.com");
+        addContact("Nguyễn Vải Thiều", "987654321", "vaithieu@example.com");
+
+        displayContacts();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+"use strict";
+let num1;
+let num2;
+let result;
+num1 = 10;
+num2 = 5;
+result = num1 + num2;
+console.log("Tổng:", result);
+result = num1 - num2;
+console.log("Hiệu:", result);
+result = num1 * num2;
+console.log("Tích:", result);
+result = num1 / num2;
+console.log("Thương:", result);

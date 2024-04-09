@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function isPrime(num) {
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        let hasPrimeNumber1 = [4, 6, 8, 9, 10];
+        let hasPrimeNumber2 = [2, 3, 5, 7, 11];
+        let check1 = hasPrimeNumber1.every((item) => {
+            return isPrime(item);
+        })
+        console.log(check1)
+        let check2 = hasPrimeNumber2.every((item) => {
+            return isPrime(item);
+        })
+        console.log(check2)
+    </script>
+</body>
+
+</html>

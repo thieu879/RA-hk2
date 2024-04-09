@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let user = [
+            { id: 1, name: "Alice", hobbies: ["Reading", "Drawing"] },
+            { id: 2, name: "Bob", hobbies: ["Gaming", "Cooking"] }
+        ]
+        let arr = [];
+        user.forEach((item) => {
+            item.hobbies.forEach((value) => {
+                arr.push(value);
+            });
+        });
+
+        console.log(arr);
+    </script>
+</body>
+
+</html>

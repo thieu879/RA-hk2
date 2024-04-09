@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let numbers = [1, 2, 3, 4, 5, 6];
+        let sum = [];
+        for(let key of numbers){
+            if(key%2==0){
+                sum.push(key);
+            }
+        }
+        let sum1 = sum.reduce((accumulator, curentValue)=>{
+            return accumulator + curentValue;
+        },0)
+        console.log(sum1)
+    </script>
+</body>
+
+</html>

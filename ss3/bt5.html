@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const inputdata = (...args) => {
+            console.log("Các đối số được truyền vào là:");
+            for (const arg of args) {
+                console.log(arg);
+            }
+        };
+        inputdata(1, 2, 3);
+        inputdata([5, 6]);
+        inputdata(true);
+        inputdata('Hello');
+
+    </script>
+</body>
+
+</html>

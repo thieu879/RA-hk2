@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let array1 = [1, 2, "a", 6, 7];
+        let array2 = ["b", "hai"];
+        let insertionIndex = 2;
+        let arr = [];
+        array1.forEach((item, index) => {
+            if (index === insertionIndex) {
+                array2.forEach((value)=>{
+                    arr.push(value);
+                })
+            }
+            arr.push(item);
+        })
+        console.log(arr)
+    </script>
+</body>
+
+</html>
