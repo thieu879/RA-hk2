@@ -1,9 +1,9 @@
-interface Square {
+type Square = {
     shape: "square";
     sideLength: number;
 }
 
-interface Circle {
+type Circle = {
     shape: "circle";
     radius: number;
 }
