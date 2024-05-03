@@ -1,0 +1,28 @@
+.box{
+    display: flex;
+    gap: 20px;
+}
+.box1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    background-color: red;
+}
+.box2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+}
+.box3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    background-color: green;
+}

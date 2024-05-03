@@ -1,0 +1,34 @@
+.table {
+    width: 800px;
+    border: 1px solid gray;
+    padding: 10px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.thead {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(196, 197, 197);
+}
+
+.buttonList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.update {
+    background-color: white;
+    border: 1px black solid;
+}
+
+.delete {
+    background-color: rgb(241, 98, 98);
+    border: 1px black solid;
+}
+
+td {
+    text-align: center;
+}
