@@ -1,8 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 table {
     width: 100%;
     border: 1px solid #aaa;
@@ -42,14 +38,6 @@ tbody tr td {
     background-color: rgb(255, 251, 194);
     margin-right: 10px;
 }
-
-button {
-    margin-top: 20px;
-    border-radius: 5px;
-    width: 50px;
-    height: 30px;
-}
-
 .delete {
     border: 1px solid rgb(247, 0, 0);
     color: rgb(247, 0, 0);

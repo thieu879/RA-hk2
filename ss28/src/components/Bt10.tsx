@@ -7,7 +7,7 @@ interface task{
   status: boolean
   date: string
 }
-export default class App extends Component {
+export default class Bt10 extends Component<task> {
   public state: task[];
   constructor(props: any) {
     super(props);
