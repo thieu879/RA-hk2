@@ -9,6 +9,7 @@ import Bt7 from './components/bt7/Bt7'
 import Bt8 from './components/bt8/Bt8'
 import Bt9 from './components/bt9/Bt9'
 import Bt10 from './components/bt10/Bt10'
+import Bt11 from './components/bt11/Bt11'
 export default function App() {
   return (
     <div>
@@ -31,6 +32,8 @@ export default function App() {
       <Bt9></Bt9>
       <br />
       <Bt10></Bt10>
+      <br />
+      <Bt11></Bt11>
       <br />
     </div>
   )
