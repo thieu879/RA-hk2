@@ -1,0 +1,17 @@
+.modalAddStudent{
+    width: 300px;
+    background-color: red;
+    position: absolute;
+    }
+.headerModel{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.inputStudent{
+    text-align: center;
+    padding: 10px;
+}
+.inputStudent input{
+    width: 90%;
+}
