@@ -43,11 +43,13 @@ export default function AddStudent() {
             status: true,
             action: ""
         });
+        window.location.reload()
         closeModal();
     }
   return (
       <>
-            <button onClick={clickAddStudent}>Thêm mới sinh viên</button>
+          <button onClick={clickAddStudent}>Thêm mới sinh viên</button>
+          
           {modalVisible ? (
                 <div id='modal1' className='modalAddStudent'>
                     <div className='headerModel'>

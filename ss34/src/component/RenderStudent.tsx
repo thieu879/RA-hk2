@@ -31,6 +31,8 @@ export default function RenderStudent() {
     const handleDelete = (id: string) => {
         const deleteStudent = students.filter(student => student.StudentID !== id);
         setStudents(deleteStudent);
+        console.log(deleteStudent);
+        
         localStorage.setItem('students', JSON.stringify(deleteStudent));
     }
 
