@@ -1,0 +1,90 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "thiều"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "123456789",
+      "thumbnail": "https://example.com/thumbnail2.jpg",
+      "created_at": "2023-06-01T10:00:00Z",
+      "created_by": "thiều",
+      "comments": [
+        {
+          "id": 1,
+          "content": "Great post! Thanks for sharin.",
+          "created_at": "2023-06-01T12:00:00Z",
+          "created_by": "Vải"
+        },
+        {
+          "id": 2,
+          "content": "Very informativ, I learned a lot.",
+          "created_at": "2023-06-01T14:00:00Z",
+          "created_by": "Charli"
+        },
+        {
+          "id": 4,
+          "content": "Can you provide more examples",
+          "created_at": "2023-06-01T16:00:00Z",
+          "created_by": "Davi"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "A Guide to Python for Beginners",
+      "thumbnail": "https://example.com/thumbnail3.jpg",
+      "created_at": "2024-06-03T08:15:00Z",
+      "created_by": "Frank",
+      "comments": [
+        {
+          "id": 6,
+          "content": "Perfect guide for starters!",
+          "created_at": "2024-06-03T10:00:00Z",
+          "created_by": "Grace"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "How to Use React Hooks",
+      "thumbnail": "https://example.com/thumbnail4.jpg",
+      "created_at": "2024-06-04T13:45:00Z",
+      "created_by": "Grace",
+      "comments": [
+        {
+          "id": 7,
+          "content": "Hooks have made my life easier!",
+          "created_at": "2024-06-04T15:30:00Z",
+          "created_by": "Hank"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Building RESTful APIs with Node.js",
+      "thumbnail": "https://example.com/thumbnail5.jpg",
+      "created_at": "2024-06-05T15:00:00Z",
+      "created_by": "Hank",
+      "comments": [
+        {
+          "id": 8,
+          "content": "This is exactly what I was looking for.",
+          "created_at": "2024-06-05T17:00:00Z",
+          "created_by": "Ivy"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "",
+      "thumbnail": "",
+      "created_at": "",
+      "created_by": "",
+      "comments": []
+    }
+  ]
+}
