@@ -21,7 +21,6 @@ export default function ListFruit() {
   const [editingFruitId, setEditingFruitId] = useState<number | null>(null);
   const [showForm, setShowForm] = useState<boolean>(false);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
-  const [deletingFruitId, setDeletingFruitId] = useState<number | null>(null);
 
   const localData = () => {
     fetch("http://localhost:3000/fruit")
@@ -46,29 +45,78 @@ export default function ListFruit() {
   };
 
   const removeFruitById = (id: number) => {
-    setDeletingFruitId(id);
+    fetch(`http://localhost:3000/fruit/${id}`, {
+      method: 'DELETE'
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Xóa không thành công');
+        }
+        return response.json();
+      })
+      .then((result) => {
+        console.log(result);
+        localData();
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
   };
 
-  const confirmDelete = () => {
-    if (deletingFruitId !== null) {
-      fetch(`http://localhost:3000/fruit/${deletingFruitId}`, {
-        method: 'DELETE'
+  const createFruit = (fruit: Omit<Fruit, 'id'>) => {
+    fetch("http://localhost:3000/fruit", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(fruit)
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Thêm mới không thành công');
+        }
+        return response.json();
       })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Xóa không thành công');
-          }
-          return response.json();
-        })
-        .then((result) => {
-          console.log(result);
-          localData();
-          setDeletingFruitId(null);
-        })
-        .catch((error) => {
-          console.error(error.message);
+      .then((result) => {
+        console.log(result);
+        localData();
+        setShowForm(false);
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+  };
+
+  const updateFruitById = (id: number, updatedFruit: Omit<Fruit, 'id'>) => {
+    fetch(`http://localhost:3000/fruit/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(updatedFruit)
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Cập nhật không thành công');
+        }
+        return response.json();
+      })
+      .then((result) => {
+        console.log(result);
+        localData();
+        setEditingFruitId(null);
+        setNewFruit({
+          name: '',
+          img: '',
+          price: 0,
+          quantity: 0,
+          create_at: new Date().toISOString(),
         });
-    }
+        setShowForm(false);
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -83,9 +131,9 @@ export default function ListFruit() {
     e.preventDefault();
     if (validate()) {
       if (editingFruitId !== null) {
-        // Code để cập nhật sản phẩm
+        updateFruitById(editingFruitId, newFruit);
       } else {
-        // Code để thêm sản phẩm mới
+        createFruit(newFruit);
       }
     }
   };
@@ -105,6 +153,44 @@ export default function ListFruit() {
   return (
     <div>
       <button onClick={() => setShowForm(true)}>Thêm mới sản phẩm</button>
+      {showForm && (
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            value={newFruit.name}
+            onChange={handleInputChange}
+          />
+          {errors.name && <span>{errors.name}</span>}
+          <input
+            type="text"
+            name="img"
+            placeholder="Image URL"
+            value={newFruit.img}
+            onChange={handleInputChange}
+          />
+          {errors.img && <span>{errors.img}</span>}
+          <input
+            type="number"
+            name="price"
+            placeholder="Price"
+            value={newFruit.price}
+            onChange={handleInputChange}
+          />
+          {errors.price && <span>{errors.price}</span>}
+          <input
+            type="number"
+            name="quantity"
+            placeholder="Quantity"
+            value={newFruit.quantity}
+            onChange={handleInputChange}
+          />
+          {errors.quantity && <span>{errors.quantity}</span>}
+          <button type="submit">Lưu</button>
+          <button type="button" onClick={() => setShowForm(false)}>Hủy</button>
+        </form>
+      )}
       <table border={1}>
         <thead>
           <tr>
@@ -134,17 +220,6 @@ export default function ListFruit() {
           ))}
         </tbody>
       </table>
-      {deletingFruitId !== null && (
-        <div className="modal">
-          <div className="modal-content">
-            <p>Bạn có chắc chắn muốn xóa sản phẩm này?</p>
-            <div>
-              <button onClick={confirmDelete}>Ok</button>
-              <button onClick={() => setDeletingFruitId(null)}>Cancel</button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
