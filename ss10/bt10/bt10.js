@@ -1,5 +1,5 @@
 "use strict";
-var a, b;
+var _a, _b;
 class Book1 {
     constructor(title, author, quantity) {
         this.title = title;
@@ -45,5 +45,5 @@ library1.addBook(book6);
 library1.addBook(book7);
 library1.addBook(book8);
 console.log(library1);
-console.log((a = library1.findBook(book6)) === null || a === void 0 ? void 0 : a.getQuantity());
-console.log((b = library1.findBook(book7)) === null || b === void 0 ? void 0 : b.getQuantity());
+console.log((_a = library1.findBook(book6)) === null || _a === void 0 ? void 0 : _a.getQuantity());
+console.log((_b = library1.findBook(book7)) === null || _b === void 0 ? void 0 : _b.getQuantity());

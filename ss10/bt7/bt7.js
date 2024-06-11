@@ -10,7 +10,7 @@ class Circle {
         this.redius1 = newRadius;
     }
     calculateArea() {
-        return Math.PI * Math.pow(this.redius1, 2);
+        return Math.PI * this.redius1 ** 2;
     }
     calculatePerimeter() {
         return 2 * Math.PI * this.redius1;
