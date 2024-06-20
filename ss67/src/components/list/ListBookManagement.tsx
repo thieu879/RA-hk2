@@ -4,6 +4,7 @@ import { addBook, editBook,deleteBook } from '../../action';
 import ModalAdd from '../modals/add/ModalAdd';
 import ModalEdit from '../modals/edit/ModalEdit';
 import swal from 'sweetalert';
+import store from '../../store/store';
 interface BookManagement {
   id: number;
   nameBook: string;
@@ -68,7 +69,7 @@ export default function ListBookManagement() {
   };
 
   const addBook = (newBook: BookManagement) => {
-    dispatch(addBook(newBook));
+    store.dispatch(addBook(newBook));
   };
 
   const handleFilterChange = (event: React.ChangeEvent<HTMLSelectElement>) => {

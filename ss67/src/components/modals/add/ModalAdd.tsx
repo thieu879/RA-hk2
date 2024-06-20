@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../../../action';
 import "./modalAdd.css";
@@ -8,7 +8,18 @@ export default function ModalAdd({ closeModalAdd }: { closeModalAdd: () => void 
   const [nameStudent, setNameStudent] = useState<string>('');
   const [borrowedDay, setBorrowedDay] = useState<string>('');
   const [payDay, setPayDay] = useState<string>('');
+  const [currentDay, setCurrentDay] = useState<string>('')
+  const [newDate, setNewDate] = useState<string>('');
+  useEffect(() => {
+    const now = new Date();
+    const day = now.getDate().toString().padStart(2, "0");
+    const month = (now.getMonth() + 1).toString().padStart(2, "0");
+    const year = now.getFullYear();
 
+    const formattedDate = `${year}-${month}-${day}`;
+    setCurrentDay(formattedDate);
+  }, []);
+  
   const dispatch = useDispatch();
 
   const handleSubmit = () => {
@@ -49,14 +60,16 @@ export default function ModalAdd({ closeModalAdd }: { closeModalAdd: () => void 
           <label htmlFor="borrowedDay">Ngày mượn:</label>
           <input 
             type="date" 
+            min={currentDay}
             id="borrowedDay" 
             value={borrowedDay} 
-            onChange={(e) => setBorrowedDay(e.target.value)} 
+            onChange={(e) => { setBorrowedDay(e.target.value); setNewDate(e.target.value) }} 
           />
           <label htmlFor="payDay">Ngày trả:</label>
           <input 
             type="date" 
             id="payDay" 
+            min={newDate}
             value={payDay} 
             onChange={(e) => setPayDay(e.target.value)} 
           />
